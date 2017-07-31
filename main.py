@@ -15,7 +15,7 @@ def timestamp(datestr):
     try:
         times = int(datestr)
         return jsonify({"status": "OK",
-                        "date": datetime.utcfromtimestamp(times).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                        "date": datetime.utcfromtimestamp(times).strftime('%Y-%m-%d %H:%M:%S'),
                         "timestamp": times})
     except ValueError:
         return jsonify({"status": "INVALID_REQUEST"})
